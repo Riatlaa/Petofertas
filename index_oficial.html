@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petofertas 🐾 – Promoções de ração que realmente valem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#16a34a;--green-dark:#14532d;--green-mid:#166534;--green-light:#dcfce7;--green-pale:#f0fdf4;--green-wa:#25D366;
+  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;
+  --gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;
+  --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--gray-900);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-200);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:38px;height:38px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo-name{font-size:17px;font-weight:800;color:var(--gray-900)}
+.logo-name span{color:var(--green)}
+.logo-tagline{font-size:11px;color:var(--gray-400);font-weight:400;display:block;margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:14px;color:var(--gray-600);text-decoration:none;font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--gray-900)}
+.nav-cta{background:var(--green-wa);color:#fff !important;padding:10px 20px;border-radius:8px;font-weight:700 !important;display:flex;align-items:center;gap:7px;text-decoration:none;font-size:14px !important;transition:background .15s,transform .1s;white-space:nowrap}
+.nav-cta:hover{background:#20bd5a;transform:translateY(-1px)}
+
+/* HERO */
+.hero{max-width:1200px;margin:0 auto;padding:72px 2rem 60px;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-pale);border:1px solid #bbf7d0;color:var(--green-mid);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:22px}
+.hero-badge::before{content:'';width:7px;height:7px;background:#22c55e;border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero h1{font-size:50px;font-weight:900;line-height:1.08;color:var(--gray-900);letter-spacing:-1.5px;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero-sub{font-size:17px;color:var(--gray-500);line-height:1.7;margin-bottom:30px;max-width:460px;text-align:justify}
+.hero-sub strong{color:var(--gray-800)}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--green-wa);color:#fff;font-size:16px;font-weight:700;padding:15px 30px;border-radius:8px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:background .15s,transform .1s,box-shadow .15s}
+.btn-wa:hover{background:#20bd5a;transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,.45)}
+.trust-row{display:flex;align-items:center;gap:20px;margin-top:22px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--gray-500);font-weight:500}
+.trust-item svg{color:var(--green)}
+
+/* HERO IMAGE AREA */
+.hero-right{position:relative}
+.hero-pets{width:100%;height:380px;object-fit:cover;border-radius:20px}
+.monitor-card{position:relative;background:var(--white);border:1px solid var(--gray-200);border-radius:16px;padding:22px;box-shadow:0 12px 40px rgba(0,0,0,0.12)}
+.monitor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),#4ade80);border-radius:16px 16px 0 0}
+.mon-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.mon-icon{width:42px;height:42px;background:var(--green-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.mon-title{font-size:13px;font-weight:700;color:var(--gray-900);line-height:1.2}
+.mon-sub{font-size:11px;color:var(--gray-400)}
+.mon-status{margin-left:auto;display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--green)}
+.dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
+.mon-label{font-size:11px;color:var(--gray-400);margin-bottom:8px}
+.mon-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.mon-row{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--gray-700)}
+.badge-mon{font-size:10px;font-weight:600;padding:2px 7px;border-radius:100px;background:var(--green-pale);color:var(--green-mid)}
+.badge-ok{font-size:10px;font-weight:600;padding:2px 7px;border-radius:100px;background:var(--green-light);color:var(--green-mid)}
+.mon-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-top:1px solid var(--gray-100);padding-top:12px;margin-bottom:10px}
+.mon-stat{text-align:center}
+.mon-num{font-size:20px;font-weight:800;color:var(--gray-900)}
+.mon-slabel{font-size:10px;color:var(--gray-400)}
+.mon-footer{background:var(--green-pale);border-radius:6px;padding:7px 10px;font-size:11px;color:var(--green-mid);font-weight:600;text-align:center}
+
+/* GRID LAYOUTS */
+.hero-grid{grid-template-columns:1fr 460px}
+.final-inner-grid{grid-template-columns:1fr auto}
+
+/* SECTION */
+section{padding:80px 2rem}
+.container{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:10px}
+.sec-title{font-size:36px;font-weight:800;text-align:center;color:var(--gray-900);letter-spacing:-.5px;margin-bottom:12px;line-height:1.15}
+.sec-sub{font-size:16px;color:var(--gray-500);text-align:center;max-width:520px;margin:0 auto 56px;line-height:1.65}
+
+/* HOW */
+.how-bg{background:var(--gray-50)}
+.steps{display:flex;align-items:flex-start;gap:0;justify-content:center}
+.step{flex:1;text-align:center;padding:0 12px;position:relative;max-width:200px}
+.step:not(:last-child)::after{content:'';position:absolute;top:27px;right:-8px;width:16px;height:2px;background:var(--gray-200)}
+.step-icon{width:54px;height:54px;background:var(--white);border:2px solid var(--gray-200);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 12px;position:relative}
+.step:first-child .step-icon,.step:last-child .step-icon{border-color:var(--green);background:var(--green-pale)}
+.step-n{position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:var(--green);color:#fff;font-size:9px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.step-title{font-size:13px;font-weight:700;color:var(--gray-800);margin-bottom:5px}
+.step-desc{font-size:11px;color:var(--gray-500);line-height:1.5;text-align:justify}
+
+/* WHATSAPP SECTION */
+.wa-section{background:var(--green-dark);padding:80px 2rem}
+.wa-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:center}
+.wa-text .eyebrow{text-align:left;color:#4ade80}
+.wa-text .sec-title{text-align:left;color:#fff;margin-bottom:14px}
+.wa-text .sec-sub{text-align:justify;color:rgba(255,255,255,.6);margin:0 0 28px}
+.wa-checks{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.wa-checks li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.8);line-height:1.5}
+.wa-checks li span.icon{width:20px;height:20px;background:var(--green-wa);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px}
+
+/* PHONE */
+.phone-wrap{display:flex;justify-content:center}
+.phone{width:270px;background:#111;border-radius:42px;padding:12px;box-shadow:0 28px 64px rgba(0,0,0,.6);border:2px solid #333}
+.phone-screen{background:#ece5dd;border-radius:32px;overflow:hidden;min-height:480px}
+.ph-header{background:#075E54;padding:10px 14px;display:flex;align-items:center;gap:10px}
+.ph-av{width:36px;height:36px;background:#4ade80;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ph-name{font-size:13px;font-weight:700;color:#fff}
+.ph-members{font-size:11px;color:rgba(255,255,255,.65)}
+.ph-body{padding:14px 10px;display:flex;flex-direction:column;gap:10px}
+.bubble{background:#fff;border-radius:0 12px 12px 12px;padding:10px 12px;max-width:95%;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.bub-from{font-size:11px;font-weight:700;color:#075E54;margin-bottom:5px}
+.bub-title{font-size:13px;font-weight:800;color:#1a1a1a;margin-bottom:6px}
+.bub-detail{font-size:12px;color:#555;line-height:1.55;margin-bottom:8px}
+.bub-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px}
+.tag-g{background:#dcfce7;color:#166534}
+.tag-b{background:#dbeafe;color:#1e40af}
+.bub-btn{display:block;background:var(--green-wa);color:#fff;text-align:center;font-size:12px;font-weight:700;padding:7px;border-radius:6px;text-decoration:none}
+.bub-time{font-size:10px;color:#999;text-align:right;margin-top:5px}
+
+/* CONFIAR */
+.confiar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.confiar-card{text-align:center;padding:28px 20px}
+.confiar-icon{width:52px;height:52px;background:var(--green-pale);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px}
+.confiar-title{font-size:15px;font-weight:700;color:var(--gray-900);margin-bottom:6px}
+.confiar-desc{font-size:13px;color:var(--gray-500);line-height:1.55;text-align:justify}
+
+/* CUPOM */
+.cupom-bg{background:var(--green-pale)}
+.cupom-box{max-width:480px;margin:0 auto;text-align:center}
+.cupom-card{background:#fff;border:2.5px dashed #86efac;border-radius:20px;padding:36px;margin-bottom:24px}
+.cupom-top{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-400);margin-bottom:10px}
+.cupom-code{font-size:52px;font-weight:900;color:var(--green);letter-spacing:.1em;margin-bottom:8px}
+.cupom-desc{font-size:14px;color:var(--gray-500)}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:860px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid var(--gray-200);border-radius:12px;overflow:hidden}
+.faq-q{padding:16px 18px;font-size:14px;font-weight:600;color:var(--gray-800);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+.faq-q:hover{background:var(--gray-50)}
+.faq-icon{font-size:18px;color:var(--green);transition:transform .2s;flex-shrink:0}
+.faq-a{padding:0 18px;font-size:13px;color:var(--gray-500);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;text-align:justify}
+.faq-item.open .faq-a{max-height:160px;padding:0 18px 14px}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+
+/* FINAL CTA */
+.final{background:var(--green-mid);padding:80px 2rem;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;max-width:1200px;margin:0 auto;border-radius:0}
+.final-wrap{background:var(--green-mid)}
+.final-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.final h2{font-size:34px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:8px}
+.final p{font-size:15px;color:rgba(255,255,255,.7)}
+.final-trust{display:flex;align-items:center;gap:20px;margin-top:12px;flex-wrap:wrap}
+.final-trust span{font-size:12px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:5px}
+.final-right{text-align:right}
+
+/* FOOTER */
+footer{background:var(--gray-900);color:var(--gray-500);text-align:center;padding:24px 2rem;font-size:13px}
+footer a{color:var(--gray-500)}
+footer strong{color:var(--gray-300)}
+
+/* PHOTO SECTIONS */
+.hero-img-wrap{position:relative}
+.hero-img{width:100%;height:400px;object-fit:cover;object-position:center 20%;border-radius:20px;display:block}
+.hero-img-overlay{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(0,0,0,0.15),transparent);border-radius:0 0 20px 20px}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;padding:48px 1.5rem 40px}
+  .hero h1{font-size:36px}
+  .monitor-card{width:100%;max-width:100%;margin-top:16px}
+  .wa-inner{grid-template-columns:1fr}
+  .confiar-grid{grid-template-columns:1fr 1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .final-inner{grid-template-columns:1fr}
+  .final-inner-grid{grid-template-columns:1fr}
+  .final-right{text-align:center !important}
+  .final-trust{justify-content:center}
+  .nav-links{display:none}
+  .steps{flex-wrap:wrap;gap:20px;justify-content:center}
+  .step:not(:last-child)::after{display:none}
+}
+@media(max-width:500px){
+  .hero h1{font-size:28px}
+  .sec-title{font-size:26px}
+  .confiar-grid{grid-template-columns:1fr}
+  .cupom-code{font-size:40px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">🐾</div>
+    <div>
+      <div class="logo-name">Clube do <span>Rabinho</span></div>
+      <span class="logo-tagline">Economia inteligente para quem ama pets</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#confiar">Por que confiar</a></li>
+    <li><a href="#o-que-voce-recebe">O que você recebe</a></li>
+    <li><a href="#faq">Perguntas</a></li>
+    <li>
+      <a href="https://chat.whatsapp.com/Bzlt0blXCfOFwvnls8dOMT" class="nav-cta" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.134.558 4.133 1.528 5.868L0 24l6.324-1.497A11.937 11.937 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.595 9.595 0 01-4.887-1.337l-.35-.208-3.633.859.892-3.524-.228-.362A9.541 9.541 0 012.4 12c0-5.29 4.31-9.6 9.6-9.6 5.29 0 9.6 4.31 9.6 9.6 0 5.29-4.31 9.6-9.6 9.6z"/></svg>
+        Entrar na Comunidade
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px;margin:0 auto;padding:72px 2rem 60px">
+  <div style="display:grid;gap:60px;align-items:center" class="hero-grid">
+    <div>
+      <div class="hero-badge">100% GRATUITO</div>
+      <h1 style="font-size:50px;font-weight:900;line-height:1.08;color:#111827;letter-spacing:-1.5px;margin-bottom:22px">
+        Economize na ração<br>do seu pet sem perder<br>tempo procurando<br><em style="font-style:normal;color:var(--green)">promoções.</em>
+      </h1>
+      <p style="font-size:17px;color:#6b7280;line-height:1.7;margin-bottom:30px;max-width:460px">
+        O Petofertas usa o <strong style="color:#1f2937">SmartPet Monitor™</strong> para monitorar automaticamente promoções e avisar você apenas quando encontra oportunidades realmente vantajosas.
+      </p>
+      <a href="https://chat.whatsapp.com/Bzlt0blXCfOFwvnls8dOMT" class="btn-wa" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.134.558 4.133 1.528 5.868L0 24l6.324-1.497A11.937 11.937 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.595 9.595 0 01-4.887-1.337l-.35-.208-3.633.859.892-3.524-.228-.362A9.541 9.541 0 012.4 12c0-5.29 4.31-9.6 9.6-9.6 5.29 0 9.6 4.31 9.6 9.6 0 5.29-4.31 9.6-9.6 9.6z"/></svg>
+        Entrar gratuitamente na Comunidade
+      </a>
+      <div class="trust-row">
+        <span class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Gratuito</span>
+        <span class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Sem spam</span>
+        <span class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Promoções selecionadas</span>
+      </div>
+    </div>
+
+    <!-- HERO RIGHT: monitor em destaque -->
+    <div style="display:flex;justify-content:center;align-items:center">
+      <div class="monitor-card" style="width:100%;max-width:340px">
+        <div class="mon-head">
+          <div class="mon-icon">🤖</div>
+          <div>
+            <div class="mon-title">SmartPet Monitor™</div>
+            <div class="mon-sub">Sistema ativo e monitorando</div>
+          </div>
+          <div class="mon-status"><div class="dot"></div>Online</div>
+        </div>
+        <div class="mon-label">Monitorando centenas de produtos...</div>
+        <ul class="mon-list">
+          <li class="mon-row"><span>🐾 Golden Special</span><span class="badge-mon">Monitorando</span></li>
+          <li class="mon-row"><span>🐾 Premier Pet</span><span class="badge-mon">Monitorando</span></li>
+          <li class="mon-row"><span>🐾 Royal Canin</span><span class="badge-mon">Monitorando</span></li>
+          <li class="mon-row"><span>🐾 Farmina</span><span class="badge-ok">✓ Aprovado</span></li>
+          <li class="mon-row"><span>🐾 Magnus</span><span class="badge-mon">Monitorando</span></li>
+        </ul>
+        <div class="mon-stats">
+          <div class="mon-stat"><div class="mon-num" id="n-prod">247</div><div class="mon-slabel">Produtos monitorados</div></div>
+          <div class="mon-stat"><div class="mon-num" id="n-prom">18</div><div class="mon-slabel">Promoções analisadas</div></div>
+          <div class="mon-stat"><div class="mon-num" id="n-aprov">4</div><div class="mon-slabel">Ofertas aprovadas</div></div>
+          <div class="mon-stat"><div class="mon-num">Agora</div><div class="mon-slabel">Última atualização</div></div>
+        </div>
+        <div class="mon-footer">⚡ Trabalhando 24h por dia para você economizar</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMO FUNCIONA -->
+<section class="how-bg" id="como-funciona">
+  <div class="container">
+    <div class="eyebrow">Simples, automático e inteligente</div>
+    <h2 class="sec-title">Como funciona</h2>
+    <p class="sec-sub">Você não precisa fazer nada. O Monitor faz o trabalho pesado por você.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🔍<div class="step-n">1</div></div>
+        <div class="step-title">Monitoramos</div>
+        <div class="step-desc">O Monitor analisa centenas de produtos pet 24h por dia.</div>
+      </div>
+      <div class="step">
+        <div class="step-icon">📊<div class="step-n">2</div></div>
+        <div class="step-title">Analisamos</div>
+        <div class="step-desc">Calculamos desconto, economia real e custo-benefício.</div>
+      </div>
+      <div class="step">
+        <div class="step-icon">✅<div class="step-n">3</div></div>
+        <div class="step-title">Selecionamos</div>
+        <div class="step-desc">Só passam ofertas com 20%+ de desconto e score aprovado.</div>
+      </div>
+      <div class="step">
+        <div class="step-icon">📲<div class="step-n">4</div></div>
+        <div class="step-title">Enviamos</div>
+        <div class="step-desc">As melhores promoções chegam direto no seu WhatsApp.</div>
+      </div>
+      <div class="step">
+        <div class="step-icon">💰<div class="step-n">5</div></div>
+        <div class="step-title">Você economiza</div>
+        <div class="step-desc">Compra com desconto real e economia garantida.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP MOCKUP -->
+<section class="wa-section" id="o-que-voce-recebe">
+  <div class="wa-inner">
+    <div class="wa-text">
+      <div class="eyebrow">Na comunidade, você recebe</div>
+      <h2 class="sec-title">Alertas inteligentes<br>direto no WhatsApp</h2>
+      <p class="sec-sub">Você recebe apenas oportunidades aprovadas pelo Monitor, com alto potencial de economia e excelente custo-benefício.</p>
+      <ul class="wa-checks">
+        <li><span class="icon">✓</span>Ofertas realmente vantajosas</li>
+        <li><span class="icon">✓</span>Links seguros direto para a loja parceira</li>
+        <li><span class="icon">✓</span>Desconto via cupom informado em cada promoção</li>
+        <li><span class="icon">✓</span>Sem spam e sem excesso de mensagens</li>
+      </ul>
+      <a href="https://chat.whatsapp.com/Bzlt0blXCfOFwvnls8dOMT" class="btn-wa" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.134.558 4.133 1.528 5.868L0 24l6.324-1.497A11.937 11.937 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.595 9.595 0 01-4.887-1.337l-.35-.208-3.633.859.892-3.524-.228-.362A9.541 9.541 0 012.4 12c0-5.29 4.31-9.6 9.6-9.6 5.29 0 9.6 4.31 9.6 9.6 0 5.29-4.31 9.6-9.6 9.6z"/></svg>
+        Entrar gratuitamente
+      </a>
+    </div>
+
+    <!-- PHONE -->
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-header">
+            <div class="ph-av">🐾</div>
+            <div>
+              <div class="ph-name">Petofertas 🐾</div>
+              <div class="ph-members">Comunidade de Promoções</div>
+            </div>
+          </div>
+          <div class="ph-body">
+            <div class="bubble">
+              <div class="bub-from">🤖 SmartPet Monitor™</div>
+              <div style="font-size:11px;color:#555;margin-bottom:8px">Encontramos uma oportunidade aprovada para você!</div>
+              <div class="bub-title">🐕 Golden Special Adultos 15kg</div>
+              <div class="bub-tags">
+                <span class="tag tag-g">✓ Oferta aprovada</span>
+                <span class="tag tag-g">✓ 25% de desconto</span>
+                <span class="tag tag-g">✓ Alta reputação da loja</span>
+              </div>
+              <div class="bub-detail">
+                <s style="color:#999">De R$ 239,90</s><br>
+                <strong style="font-size:15px;color:#111">Por R$ 179,90</strong><br>
+                <span style="color:var(--green);font-weight:700">Economia de R$ 60,00</span><br><br>
+                🏷️ Desconto aplicado via cupom (informado na mensagem)
+              </div>
+              <a href="#" class="bub-btn">Ver oferta agora</a>
+              <div class="bub-time">09:42 ✓✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE CONFIAR -->
+<section id="confiar">
+  <div class="container">
+    <div class="eyebrow">Tecnologia e critérios próprios</div>
+    <h2 class="sec-title">Por que confiar no Petofertas?</h2>
+    <p class="sec-sub">Critérios rigorosos e um sistema próprio que trabalha 24h para garantir que você receba só o melhor.</p>
+    <div class="confiar-grid">
+      <div class="confiar-card">
+        <div class="confiar-icon">🛡️</div>
+        <div class="confiar-title">Tecnologia exclusiva</div>
+        <div class="confiar-desc">O Monitor utiliza algoritmo próprio para monitorar e analisar promoções em tempo real, com critérios definidos para você.</div>
+      </div>
+      <div class="confiar-card">
+        <div class="confiar-icon">🎯</div>
+        <div class="confiar-title">Critérios rigorosos</div>
+        <div class="confiar-desc">Aprovamos apenas ofertas com 20%+ de desconto real, avaliando economia, custo-benefício e reputação do produto.</div>
+      </div>
+      <div class="confiar-card">
+        <div class="confiar-icon">🐾</div>
+        <div class="confiar-title">Foco na comunidade</div>
+        <div class="confiar-desc">Nosso objetivo é ajudar donos de pets a economizar de verdade, todos os dias, sem enrolação.</div>
+      </div>
+      <div class="confiar-card">
+        <div class="confiar-icon">💚</div>
+        <div class="confiar-title">100% gratuito</div>
+        <div class="confiar-desc">A comunidade é totalmente gratuita e sempre será. Nosso compromisso é com a sua economia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="eyebrow">Dúvidas frequentes</div>
+    <h2 class="sec-title">Perguntas e respostas</h2>
+    <p class="sec-sub" style="margin-bottom:40px">Tudo que você precisa saber antes de entrar.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">A comunidade é realmente gratuita?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Sim! 100% gratuita. Nosso objetivo é ajudar você a economizar na ração e produtos do seu pet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Vocês enviam muitas mensagens?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Não. Enviamos apenas oportunidades reais e relevantes — com 20%+ de desconto aprovado pelo Monitor.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Como recebo as promoções?<span class="faq-icon">+</span></div>
+        <div class="faq-a">As promoções são enviadas diretamente no grupo do WhatsApp. Só administradores enviam mensagens.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">As promoções são de lojas confiáveis?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Sim! Trabalhamos apenas com lojas pet confiáveis e de credibilidade reconhecida no mercado.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-wrap" style="background:var(--green-mid);padding:72px 2rem">
+  <div style="max-width:1200px;margin:0 auto;display:grid;gap:48px;align-items:center" class="final-inner-grid">
+    <div>
+      <h2 style="font-size:34px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:8px">Comece a economizar hoje.</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,.7);margin-bottom:16px">Entre na comunidade gratuita e receba as melhores oportunidades para o seu pet.</p>
+      <div class="final-trust">
+        <span>✓ Gratuito</span>
+        <span>✓ Sem spam</span>
+        <span>✓ Promoções selecionadas</span>
+      </div>
+    </div>
+    <div class="final-right" style="flex-shrink:0">
+      <a href="https://chat.whatsapp.com/Bzlt0blXCfOFwvnls8dOMT" class="btn-wa" style="font-size:15px;white-space:nowrap" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.134.558 4.133 1.528 5.868L0 24l6.324-1.497A11.937 11.937 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.595 9.595 0 01-4.887-1.337l-.35-.208-3.633.859.892-3.524-.228-.362A9.541 9.541 0 012.4 12c0-5.29 4.31-9.6 9.6-9.6 5.29 0 9.6 4.31 9.6 9.6 0 5.29-4.31 9.6-9.6 9.6z"/></svg>
+        Entrar gratuitamente na Comunidade
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>🐾 <strong>Petofertas</strong> — Economia inteligente para quem ama pets &nbsp;|&nbsp; © 2025 Petofertas. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(el=>{
+  el.querySelector('.faq-q').addEventListener('click',()=>{
+    const open=el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)el.classList.add('open');
+  });
+});
+let p=247,pr=18;
+setInterval(()=>{
+  if(Math.random()>.6){p+=Math.floor(Math.random()*3);pr+=1;
+  document.getElementById('n-prod').textContent=p;
+  document.getElementById('n-prom').textContent=pr;}
+},3500);
+
+</script>
+</body>
+</html>
